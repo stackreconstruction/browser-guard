@@ -17,6 +17,10 @@ Copy the folder, or depend on it from disk:
 "dependencies": { "browser-guard": "file:../ig-rb-ext/packages/browser-guard" }
 ```
 
+E.g. in a repo
+- ./clip-2026-11-25-222355.png
+
+
 It ships TypeScript sources: the project's bundler (Vite, esbuild) compiles them.
 Everything imported from `browser-guard` is plain TypeScript over the `chrome` APIs:
 no framework. The optional peers are for parts you may not use: `@types/chrome` to
