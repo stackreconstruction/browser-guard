@@ -1,5 +1,7 @@
 # Browser Guard
 
+![Browser Guard under packages/ in an extension repository](./browser-guard-repo.png)
+
 Browser Guard provides TypeScript helpers for browser extensions. It includes
 per-site activation, request and sender validation, local address filtering,
 isolated page UI, inert document copies, guard event logging, and messaging
