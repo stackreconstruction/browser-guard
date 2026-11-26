@@ -1,5 +1,4 @@
-// browser-guard: the browser-interaction security and privacy model of ig-rb-ext, for
-// other extensions and apps. RULES.md says what each part is for; PENTEST.md how to check.
+// Defensive browser interaction utilities for extensions and apps.
 export * from './browsers';
 export * from './localNetwork';
 export * from './siteActivation';

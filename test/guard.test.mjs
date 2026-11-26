@@ -45,7 +45,7 @@ test('the request rules block what isLocalUrl calls local, and nothing it calls 
   // Credentials may hold ' ( ) *, which URLs keep as they are.
   for (const url of ["http://a(b)*'c@192.168.1.1/x.jpg", "http://a(b@localhost./x.jpg"]) assert.ok(patterns.some(pattern => pattern.test(new URL(url).href)), url);
   // An "@" in the path isn't credentials: these are public pictures.
-  for (const url of ['https://medium.com/@someone/a.jpg', 'https://cdn.example/a@b/c.jpg', 'https://example.com/@10.0.0.1/a.jpg', 'https://example.com/logo@2x.png']) {
+  for (const url of ['https://site.example/@someone/a.jpg', 'https://cdn.example/a@b/c.jpg', 'https://example.com/@10.0.0.1/a.jpg', 'https://example.com/logo@2x.png']) {
     assert.ok(!isLocalUrl(url) && patterns.every(pattern => !pattern.test(url)), url);
   }
 });

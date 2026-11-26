@@ -2,12 +2,11 @@
   "name": "browser-guard",
   "private": true,
   "version": "0.5.0",
-  "description": "The browser-interaction security and privacy model of ig-rb-ext: code, rules and pentest tools for extensions and apps that touch other people's pages.",
+  "description": "Defensive browser interaction utilities for extensions and apps.",
   "type": "module",
   "exports": {
     ".": "./src/index.ts",
-    "./react": "./src/react.ts",
-    "./testing/*": "./testing/*"
+    "./react": "./src/react.ts"
   },
   "scripts": {
     "test": "node --test test/*.test.mjs",
@@ -19,12 +18,18 @@
     "react": ">=18"
   },
   "peerDependenciesMeta": {
-    "@types/chrome": { "optional": true },
-    "playwright": { "optional": true },
-    "react": { "optional": true }
+    "@types/chrome": {
+      "optional": true
+    },
+    "playwright": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    }
   },
   "devDependencies": {
-    "esbuild": "^0.21.5",
-    "playwright": "~1.56.1"
+    "esbuild": "0.21.5",
+    "playwright": "1.56.1"
   }
 }

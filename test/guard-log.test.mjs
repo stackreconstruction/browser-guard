@@ -37,11 +37,6 @@ test('the source of the guards themselves', async () => {
   assert.match(see, /export function seeThroughWhileHeld/);
   const local = await readFile(new URL('../src/localNetwork.ts', import.meta.url), 'utf8');
   assert.match(sourceOf(local, 'isLocalIpv4'), /^const isLocalIpv4 = [^\n]*\n[\s\S]*\(a === 192 && b === 168\)[\s\S]*;$/);
-  const background = await readFile(new URL('../../../src/background.ts', import.meta.url), 'utf8');
-  for (const name of ['fetchResource', 'fetchCleanPage', 'downloadFiles', 'runYtDlp']) {
-    const code = sourceOf(background, name);
-    assert.ok(code && new RegExp(`function ${name}\\b`).test(code) && /\n}$|…$/.test(code), name);
-  }
 });
 
 test('an event a page can repeat is reported once in a while, with how many were left out', () => {

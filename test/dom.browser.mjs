@@ -1,11 +1,11 @@
 // browser-guard's parts that need a page, in Chromium (no extension loaded): the page
 // host, seeing through it with Ctrl, replacing a copy, inert copies, and a host put back. Real input comes
 // from Playwright (trusted); made-up input from the page's own script (not trusted).
-// Run: node packages/browser-guard/test/dom.browser.mjs (ig-rb-ext's `npm run test:browser` does).
+// Run: npm run test:browser
 import assert from 'node:assert/strict';
 import { fileURLToPath } from 'node:url';
 import { build } from 'esbuild';
-import { chromium } from '../testing/extensionBrowser.mjs';
+import { chromium } from 'playwright';
 
 const bundle = await build({ entryPoints: [fileURLToPath(new URL('../src/index.ts', import.meta.url))], bundle: true, write: false, format: 'iife', globalName: 'guard' });
 const PAGE = `<body style="margin:0"><div id="under" style="position:fixed;left:0;top:0;width:200px;height:200px"></div>
